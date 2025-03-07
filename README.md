@@ -1,6 +1,6 @@
-# AI QuizGenie – Generate AI-Powered Quizzes
+# AI Quiz Genie – Generate AI-Powered Quizzes
 
-AI QuizGenie is an **Apify Actor** that extracts content from **webpages and PDFs** to generate **multiple-choice quiz questions (MCQs)** using **LLMs (GPT-3.5, GPT-4, etc.)**.
+ai-quizgenie is an **Apify Actor** that extracts content from **webpages and PDFs** to generate **multiple-choice quiz questions (MCQs)** using **LLMs (GPT-3.5, GPT-4, etc.)**.
 
 ✅ **Supports Web & PDF Extraction**  
 ✅ **Dynamic Model Selection** (GPT-3.5, GPT-4, etc.)  
@@ -11,7 +11,7 @@ AI QuizGenie is an **Apify Actor** that extracts content from **webpages and PDF
 
 ## 📂 Project Structure
 ```
-/AI_QuizGenie/
+/ai-quizgenie/
 │── src/
 │   ├── __main__.py       # Executes main.py
 │   ├── main.py           # Apify Actor Execution and Langgraph flow
@@ -30,8 +30,8 @@ AI QuizGenie is an **Apify Actor** that extracts content from **webpages and PDF
 ## 🛠 Installation & Setup
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/AI_QuizGenie.git
-cd AI_QuizGenie
+git clone https://github.com/yourusername/ai-quizgenie.git
+cd ai-quizgenie
 ```
 
 ### 2️⃣ Install Dependencies
@@ -98,7 +98,7 @@ apify push
 
 ### 2️⃣ Run on Apify Cloud
 ```bash
-apify call your-username/ai-quizgenie -i input.json
+apify call ball-ceg/ai-quizgenie -i input.json
 ```
 
 ---
