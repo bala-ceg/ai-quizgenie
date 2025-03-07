@@ -7,7 +7,8 @@
           "title": "URL",
           "type": "string",
           "description": "Enter a webpage or PDF URL to generate quiz questions.",
-          "editor": "textfield"
+          "editor": "textfield",
+          "prefill": "https://en.wikipedia.org/wiki/Artificial_intelligence"
       },
       "num_questions": {
           "title": "Number of Questions",
