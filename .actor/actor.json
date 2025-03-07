@@ -1,0 +1,16 @@
+{
+	"actorSpecification": 1,
+	"name": "AI-QuizGenie",
+	"title": "AI Quiz Generator with LangGraph",
+	"description": "Apify Actor that extracts text from a webpage or PDF and generates quiz questions.",
+	"version": "1.0",
+	"buildTag": "latest",
+	"input": "./input_schema.json",
+	"storages": {
+		"dataset": "./dataset_schema.json"
+	},
+	"meta": {
+		"templateId": "python-langgraph"
+	},
+	"dockerfile": "./Dockerfile"
+}
