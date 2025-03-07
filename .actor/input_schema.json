@@ -7,20 +7,24 @@
           "title": "URL",
           "type": "string",
           "description": "Enter a webpage or PDF URL to generate quiz questions.",
-          "editor": "textfield"
+          "editor": "textfield",
+          "default": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+          "prefill": "https://en.wikipedia.org/wiki/Artificial_intelligence"
       },
       "num_questions": {
           "title": "Number of Questions",
           "type": "integer",
           "description": "How many quiz questions to generate?",
-          "default": 5
+          "default": 5,
+          "prefill": 5
       },
       "difficulty": {
           "title": "Difficulty Level",
           "type": "string",
           "description": "Choose the difficulty level for quiz questions.",
           "enum": ["Easy", "Medium", "Hard"],
-          "default": "Medium"
+          "default": "Medium",
+          "prefill": "Medium"    
       },
       "model": {
         "title": "OpenAI model",
