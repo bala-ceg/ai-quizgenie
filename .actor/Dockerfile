@@ -1,16 +1,13 @@
-# First, specify the base Docker image.
-# You can see the Docker images from Apify at https://hub.docker.com/r/apify/.
-# You can also use any other image from Docker Hub.
+# Use Apify's Python base image
 FROM apify/actor-python:3.13
 
-# Second, copy just requirements.txt into the Actor image,
-# since it should be the only file that affects the dependency installation in the next step,
-# in order to speed up the build.
+# Set a writable directory for browserforge fingerprint data
+ENV BROWSERFORGE_DATA_DIR="/home/apify/browserforge_data"
+
+# Copy just requirements.txt first to improve build caching
 COPY requirements.txt ./
 
-# Install the packages specified in requirements.txt,
-# print the installed Python version, pip version,
-# and all installed packages with their versions for debugging.
+# Install dependencies
 RUN echo "Python version:" \
  && python --version \
  && echo "Pip version:" \
@@ -20,19 +17,17 @@ RUN echo "Python version:" \
  && echo "All installed Python packages:" \
  && pip freeze
 
-# Next, copy the remaining files and directories with the source code.
-# Since we do this after installing the dependencies, quick builds will be really fast
-# for most source file changes.
+# Copy the rest of the app code
 COPY . ./
 
-# Use compileall to ensure the runnability of the Actor Python code.
+# Compile Python files to ensure runnability
 RUN python3 -m compileall -q .
 
-# Create and run as a non-root user.
+# Create and run as a non-root user
 RUN useradd --create-home apify && \
-    chown -R apify:apify ./
+    mkdir -p /home/apify/browserforge_data && \
+    chown -R apify:apify /home/apify
 USER apify
 
-# Specify how to launch the source code of your Actor.
-# By default, the "python3 -m ." command is run.
+# Run the Actor
 CMD ["python3", "-m", "src"]
