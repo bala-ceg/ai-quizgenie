@@ -113,5 +113,18 @@ apify call ball-ceg/ai-quizgenie -i input.json
 Want to improve AI QuizGenie? Open a PR or suggest features! 🚀  
 
 ---
+## Apify Screenshots
+
+<img width="1518" alt="Screenshot 2025-03-07 at 9 43 06 PM" src="https://github.com/user-attachments/assets/13610ef1-9fce-42da-b0fa-fe1d88e43ee3" />
+
+---
+
+<img width="1508" alt="Screenshot 2025-03-07 at 9 39 04 PM" src="https://github.com/user-attachments/assets/2a4d9129-3940-4c8d-a401-f23bc29762a0" /> 
+
+---
+<img width="1518" alt="Screenshot 2025-03-07 at 9 41 08 PM" src="https://github.com/user-attachments/assets/3d9af545-7450-40f1-9265-50aa528ef48f" />
+
+---
+
 
  
