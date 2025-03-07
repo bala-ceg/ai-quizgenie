@@ -22,9 +22,6 @@ COPY . ./
 
 # Compile Python files to ensure runnability
 RUN python3 -m compileall -q .
-# Ensure the writable directory exists and is owned by the `apify` user
-RUN mkdir -p /home/apify/browserforge_data && \
-    chown -R apify:apify /home/apify/browserforge_data
 
 # Create and run as a non-root user
 RUN useradd --create-home apify && \
