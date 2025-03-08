@@ -10,6 +10,7 @@ from langchain_core.output_parsers.json import JsonOutputParser
 
 from src.models import QuizGenieState
 from src.tools import scrape_webpage, extract_pdf_from_url
+from src.ppe_utils import charge_for_actor_start
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", "https://api.openai.com/v1")
@@ -96,6 +97,7 @@ async def main():
     """Main Apify Actor function."""
     async with Actor:
         actor_input = await Actor.get_input() or {}
+        await charge_for_actor_start()
 
         # Validate input using Pydantic
         try:
@@ -107,9 +109,6 @@ async def main():
 
         # Execute the workflow
         final_state = quizgenie_workflow.invoke(quiz_state)
-        
-        # Charge for task completion
-        await Actor.charge("generate-quiz")
         
         # Properly extract questions from `AddableValuesDict`
         await Actor.push_data({"questions": final_state.get('questions', [])})
