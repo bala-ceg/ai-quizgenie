@@ -107,7 +107,10 @@ async def main():
 
         # Execute the workflow
         final_state = quizgenie_workflow.invoke(quiz_state)
-
+        
+        # Charge for task completion
+        await Actor.charge("generate-quiz")
+        
         # Properly extract questions from `AddableValuesDict`
         await Actor.push_data({"questions": final_state.get('questions', [])})
         Actor.log.info("Quiz generated successfully!")
