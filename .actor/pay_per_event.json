@@ -23,5 +23,9 @@
         "eventTitle": "Price per 100 OpenAI tokens for o3-mini",
         "eventDescription": "Flat fee for each 100 o3-mini tokens used.",
         "eventPriceUsd": 0.00044
+    }, "openai-100-tokens-gpt-3.5-turbo": {
+        "eventTitle": "Price per 100 OpenAI tokens for gpt-3.5-turbo",
+        "eventDescription": "Flat fee for each 100 gpt-3.5-turbo tokens used.",
+        "eventPriceUsd": 0.00044
     }
 }
